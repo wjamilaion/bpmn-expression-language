@@ -19,11 +19,11 @@ import {
   ConditionChecker
 } from 'bpmn-expression-language'
 
-const conditionChecker1 = new ConditionChecker(
-  null
+const conditionChecker = new ConditionChecker(
+  null,
   null
 );
-const result = conditionChecker1.check('=list contains(["Active","Close","Dormant"], application_status.value)', {
+const result = conditionChecker.check('=list contains(["Active","Close","Dormant"], application_status.value)', {
   "PEP_check": {
       "type": "Boolean",
       "value": true,
