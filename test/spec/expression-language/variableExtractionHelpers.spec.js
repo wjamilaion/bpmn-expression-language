@@ -49,7 +49,7 @@ describe('getFlavouredFeelVariableNames', () => {
   expectVariables('ComplexArrayFilter', 'variable1[item.a > 3 and item.b < 5]', [ 'variable1' ]);
 
 
-  // TODO(@skaiir) these tests should ideally pass, but right now our variable extraction logic doesn't ignore certain keywords
+  // TODO these tests should ideally pass, but right now our variable extraction logic doesn't ignore certain keywords
   // https://github.com/bpmn-io/form-js/issues/710
 
   describe.skip('Oversensitive', () => {

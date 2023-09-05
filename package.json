@@ -31,6 +31,7 @@
   "author": "waqas",
   "license": "ISC",
   "dependencies": {
+    "didi": "^9.0.2",
     "feelers": "^0.1.0",
     "feelin": "^1.0.0",
     "min-dash": "^4.1.1"
