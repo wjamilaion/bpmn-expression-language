@@ -1,0 +1,84 @@
+{
+  "name": "bpmn-expression-language",
+  "version": "1.0.0",
+  "description": "expression language to use in bpmn form viewer",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.es.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "run-p bundle generate-types",
+    "bundle": "rollup -c --failAfterWarnings --bundleConfigAsCjs",
+    "test": "karma start",
+    "generate-types": "tsc --allowJs --skipLibCheck --declaration --emitDeclarationOnly --outDir dist/types src/index.js && copyfiles --flat src/*.d.ts dist/types",
+    "lint": "eslint src",
+    "lint:types": "tsc --noEmit --pretty"
+  },
+  "keywords": [
+    "bpmn",
+    "expression",
+    "language"
+  ],
+  "author": "waqas",
+  "license": "ISC",
+  "dependencies": {
+    "feelers": "^0.1.0",
+    "feelin": "^1.0.0",
+    "min-dash": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-react-jsx": "^7.14.5",
+    "@babel/plugin-transform-react-jsx-source": "^7.14.5",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@svgr/rollup": "^8.0.1",
+    "@svgr/webpack": "^8.0.1",
+    "@types/chai": "^4.2.19",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^14.17.4",
+    "@types/sinon": "^10.0.0",
+    "@types/sinon-chai": "^3.2.5",
+    "babel-loader": "^9.0.0",
+    "babel-plugin-istanbul": "^6.1.1",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.22.0",
+    "eslint-plugin-bpmn-io": "^1.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "karma": "^6.3.20",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
+    "karma-debug-launcher": "0.0.4",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-firefox-launcher": "^2.1.1",
+    "karma-mocha": "^2.0.1",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-webpack": "^5.0.0",
+    "mocha": "^10.0.0",
+    "mocha-test-container-support": "^0.2.0",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^21.0.0",
+    "raw-loader": "^4.0.2",
+    "rollup": "^3.0.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "source-map-loader": "^4.0.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "src/*"
+  ]
+}
